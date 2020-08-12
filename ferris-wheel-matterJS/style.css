@@ -1,0 +1,11 @@
+html,
+body {
+  margin: 0;
+}
+body {
+  height: 100%;
+}
+.matter-world {
+  margin: 0;
+  overflow: hidden;
+}
