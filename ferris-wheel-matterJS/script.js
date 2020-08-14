@@ -203,10 +203,10 @@ const support = new Support(ferrisWheel.frame, ground);
 // display them
 ferrisWheel.show();
 ground.show();
-// support.show();
+support.show();
 
 // rotate the ferris wheel by applying torque
-// setInterval(() => { ferrisWheel.frame.torque = 1000; }, 100);
+setInterval(() => { ferrisWheel.frame.torque = 5; }, 100);
 
 
 // run the engine
