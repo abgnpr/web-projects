@@ -17,6 +17,19 @@ body {
   overflow: hidden;
 }
 
+.bush {
+  position: absolute;
+  zoom: 150%;
+  bottom: -0.1vh;
+}
+
+.engine {
+  position: absolute;
+  right: 1vw;
+  bottom: 0vw;
+  zoom: 0.8;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
