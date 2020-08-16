@@ -4,11 +4,18 @@
   "description": "An interactive ferris wheel.",
   "icons": [
     {
-      "src": "/images/ferrisWheel.png",
-      "sizes": "48x48",
+      "src": "favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "start_url": "/?source=pwa",
-  "display": "standalone"
+  "start_url": "https://mountap.github.io/web-projects/ferris-wheel-matterJS/?source=pwa",
+  "theme_color": "",
+  "background_color": "",
+  "display": "fullscreen"
 }

@@ -29,7 +29,6 @@ let Engine = Matter.Engine,
   Vertices = Matter.Vertices,
   Events = Matter.Events;
 
-
 // create an engine
 let engine = Engine.create();
 
@@ -311,9 +310,9 @@ const ground = new Ground(50, 59.5 + pxTOvh(ferrisWheel.radius), 60, 1);
 const support = new Support(ferrisWheel, ground);
 
 // display them
-ferrisWheel.show();
-ground.show();
-support.show();
+// ferrisWheel.show();
+// ground.show();
+// support.show();
 
 
 // run the engine

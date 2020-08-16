@@ -7,23 +7,36 @@
     <title>Ferris Wheel</title>
     <meta name="author" content="Abhigyan Prakash" />
     <meta name="description" content="Ferris Wheel" />
+    <meta name="theme-color" content="#000000ec" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
     <link
       rel="icon"
       type="image/png"
-      sizes="48x48"
-      href="./images/ferrisWheel.png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
     />
-
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="manifest" href="./site.webmanifest" />
 
-    <script defer src="./lib/decomp.js"></script>
-    <script defer src="./lib/matter.js"></script>
-    <script defer src="./script.js"></script>
-    <script defer src="./controls.js"></script>
+    <script defer src="lib/decomp.js"></script>
+    <script defer src="lib/matter.js"></script>
+    <script defer src="script.js"></script>
+    <script defer src="controls.js"></script>
   </head>
+
   <body>
-    <img class="spin-toggle spinning" src="./images/start-stop.svg" />
+    <img class="spin-toggle spinning" src="images/start-stop.svg" />
     <img class="lock" />
     <input
       type="range"
