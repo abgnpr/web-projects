@@ -39,10 +39,10 @@ let render = Render.create({
   options: {
     width: window.innerWidth,
     height: window.innerHeight,
-    showConvexHulls: true,
-    wireframes: false,
+    // showConvexHulls: true,
+    // wireframes: false,
     background: '0',
-    pixelRatio: 'auto'
+    // pixelRatio: 'auto'
   }
 });
 
