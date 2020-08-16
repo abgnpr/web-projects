@@ -15,7 +15,7 @@
     }
   ],
   "start_url": "https://mountap.github.io/web-projects/ferris-wheel-matterJS/?source=pwa",
-  "theme_color": "",
-  "background_color": "",
+  "theme_color": "#E4FEFF",
+  "background_color": "#39defc",
   "display": "fullscreen"
 }
