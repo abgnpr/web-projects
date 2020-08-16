@@ -17,21 +17,16 @@ body {
   overflow: hidden;
 }
 
-.stop {
+.spin-toggle {
   max-width: 5vmax;
   position: absolute;
   right: 1.5vw;
   bottom: 1.4vw;
   zoom: 0.8;
-  animation: spin 5s linear 0s infinite;
 }
 
-.start {
-  max-width: 5vmax;
-  position: absolute;
-  right: 1.5vw;
-  bottom: 1.4vw;
-  zoom: 0.8;
+.spinning {
+  animation: spin 5s linear 0s infinite;
 }
 
 .lock {
@@ -52,6 +47,6 @@ body {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(180deg);
+    transform: rotate(360deg);
   }
 }

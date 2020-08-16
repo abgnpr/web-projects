@@ -1,4 +1,5 @@
 const html = document.querySelector('html');
+window.onresize = () => document.location.reload();
 
 
 // utility
@@ -42,7 +43,7 @@ let render = Render.create({
     showConvexHulls: true,
     wireframes: false,
     background: '0',
-    // pixelRatio: 'auto'
+    pixelRatio: 'auto'
   }
 });
 
@@ -64,6 +65,7 @@ let Categories = {
   axle: Body.nextCategory(true),
   support: Body.nextCategory(true)
 }
+
 
 // My custom bodies
 const CustomBodies = {
@@ -88,7 +90,7 @@ const CustomBodies = {
           render: { fillStyle: '0', strokeStyle: '#2475B0', lineWidth: vminTOpx(5) },
         })
       ],
-      density: 0.0003, airFriction: 0,
+      airFriction: 0,
       collisionFilter: { group: Groups.nonColliding }
     });
   },
@@ -107,9 +109,8 @@ const CustomBodies = {
     let h = r + r / 2; // triangle height
     let cap = Bodies.polygon(x, y, 3, vminTOpx(r), {  // triangle
       render: { fillStyle: color.cap, lineWidth: vminTOpx(1), strokeStyle: color.cap },
-      chamfer: { radius: [0, vminTOpx(4), 0] },
+      chamfer: { radius: [0, vminTOpx(4), 0], quality: 12 },
       angle: degTOrad(90),
-      density: 0.005
     });
 
     // square basket
@@ -117,29 +118,26 @@ const CustomBodies = {
     let b = r * Math.sqrt(3); // square bredth
     let basket = Bodies.rectangle(x, y + vminTOpx(h - r + l / 2), vminTOpx(b), vminTOpx(l), {
       render: { fillStyle: color.basket, lineWidth: 0 },
-      chamfer: { radius: [0, 0, vminTOpx(2.5), vminTOpx(2.5)] },
-      density: 0.005
+      chamfer: { radius: [0, 0, vminTOpx(2.5), vminTOpx(2.5)] }
     });
 
     // gondola gate
     let gatePosY = basket.position.y + vminTOpx(l / 8);
     let gate = Bodies.rectangle(basket.position.x, gatePosY, vminTOpx(b / 3.5), vminTOpx(3 * l / 4), {
       render: { fillStyle: '#c8d6e5be', lineWidth: 0 },
-      chamfer: { radius: [vminTOpx(0.7), vminTOpx(0.7), 0, 0] },
-      density: 0
+      chamfer: { radius: [vminTOpx(0.7), vminTOpx(0.7), 0, 0] }
     });
 
     // circular joint (attaches to wheel frame)
     let jointPosY = (cap.position.y + cap.vertices[1].y) / 2;
     let joint = Bodies.circle(x, jointPosY, vminTOpx(0.4), {
-      render: { fillStyle: '#586776', lineWidth: vminTOpx(0.6), strokeStyle: '#DAE0E2' },
+      render: { fillStyle: '#586776', lineWidth: vminTOpx(0.6), strokeStyle: '#DAE0E2' }
     });
 
     // gondola body: a compound object made up of cap, basket, gate and joint
     let body = Body.create({
       parts: [cap, basket, gate, joint],
       collisionFilter: { group: Groups.nonColliding },
-      density: 0.01,
     });
 
     body.jointPos = joint.position; // monkey patch
@@ -150,7 +148,7 @@ const CustomBodies = {
   axle: function (x, y, r) {
     return Bodies.circle(x, y, r, {
       collisionFilter: { category: Categories.axle, mask: Categories.support },
-      friction: 0, density: 0.005, mass: 200, restitution: 1,
+      friction: 0, density: 5, restitution: 0,
       render: { fillStyle: '#7E212C' },
       // isStatic: true
     });
@@ -159,7 +157,7 @@ const CustomBodies = {
   axleCup: function (axle) {
     let r = axle.circleRadius;
     let x = axle.position.x;
-    let y = axle.position.y + r;
+    let y = axle.position.y + r + vminTOpx(0.2);
     return Bodies.fromVertices(x, y,
       Vertices.fromPath(`  
         0, 0
@@ -167,13 +165,15 @@ const CustomBodies = {
         ${6 * r}, ${4 * r}
         ${6 * r}, 0
         ${4 * r}, 0
-        ${4 * r}, ${2 * r}
-        ${2 * r}, ${2 * r}
+        ${3.9 * r}, ${2 * r}
+        ${1.9 * r}, ${2 * r}
         ${2 * r}, 0`
       ),
       {
-        collisionFilter: { category: Categories.support, mask: Categories.axle },
-        density: 0.01, mass: 1000, isStatic: true, restitution: 0,
+        collisionFilter: {
+          group: Groups.nonColliding, category: Categories.support, mask: Categories.axle
+        },
+        density: 5, isStatic: true, restitution: 0,
         render: { fillStyle: '#192A56' },
       }, true
     );
@@ -187,9 +187,15 @@ const CustomBodies = {
 
     // some adjustment voodoo!
     let posX = axleCup.position.x;
-    let leftPosX = posX - (1.8 * r) - (w / 2);
-    let rightPosX = posX + (1.8 * r) + (w / 2);
-    let posY = (wheel.position.y + base.position.y) / 1.88;
+    let leftPosX = posX - (1.9 * r) - (w / 2);
+    let rightPosX = posX + (1.9 * r) + (w / 2);
+    // let posY = (wheel.position.y + base.position.y) / 1.9;
+    let a = 6 * r;
+    let b = a + 2 * w;
+    let centroidY = (b + 2 * a) / (3 * (a + b)) * h;
+
+    // let posY = centroidY + wheel.position.y;
+    let posY = base.top - centroidY;
 
     let color = '#192A56';
 
@@ -197,31 +203,29 @@ const CustomBodies = {
       parts: [
         Bodies.fromVertices(leftPosX, posY,
           Vertices.fromPath(`${w},0  0,${h}  ${w / 2},${h}  ${w},${h / 2}`),
-          { render: { fillStyle: color }, }
+          { render: { fillStyle: color, strokeStyle: color, lineWidth: vminTOpx(1) }, }
         ),
         Bodies.fromVertices(rightPosX, posY,
           Vertices.fromPath(`0,0  ${w},${h}  ${w / 2},${h}  0,${h / 2}`),
-          { render: { fillStyle: color } }
+          { render: { fillStyle: color, strokeStyle: color, lineWidth: vminTOpx(1) }, }
         ),
       ],
-      density: 0.01, mass: 1000, isStatic: true, restitution: 0,
+      density: 5, mass: 1000, isStatic: true, restitution: 0,
       collisionFilter: {
-        group: -1, category: Categories.support, mask: Categories.axle
-      },
+        group: Groups.nonColliding, category: Categories.support, mask: Categories.axle
+      }
     });
   }
 
 };
 
-// ferris wheel object
+
 function FerrisWheel(x_vw, y_vh) {
   let x = vwTOpx(x_vw);
   let y = vhTOpx(y_vh);
   this.radius = vminTOpx(40);
   this.axleRadius = vminTOpx(2);
 
-
-  // bodies
 
   // wheel frame
   this.frame = CustomBodies.frame(x, y, this.radius);
@@ -235,9 +239,6 @@ function FerrisWheel(x_vw, y_vh) {
   for (let vertex of this.frame.vertices) {
     this.gondolas.push(CustomBodies.gondola(vertex.x, vertex.y));
   }
-
-
-  // constraints
 
   // attachment point of axle and frame
   this.axis = Constraint.create({
@@ -282,7 +283,6 @@ function FerrisWheel(x_vw, y_vh) {
   }
 }
 
-// ground object
 function Ground(x_vw, y_vh, span_vw, thickness_vh) {
   let x = vwTOpx(x_vw);
   let y = vhTOpx(y_vh);
@@ -295,18 +295,18 @@ function Ground(x_vw, y_vh, span_vw, thickness_vh) {
   this.show = function () { World.add(engine.world, this.body); }
 }
 
-// support object
 function Support(body, base) {
+  // holder for wheel axle
   this.axleCup = CustomBodies.axleCup(body.axle);
+  // dummy pedestal
   this.pedestal = CustomBodies.pedestal(this.axleCup, body, base);
 
   this.show = function () { World.add(engine.world, [this.pedestal, this.axleCup]); }
 }
 
 
-// create object instances
 const ferrisWheel = new FerrisWheel(50, 50);
-const ground = new Ground(50, 60 + pxTOvh(ferrisWheel.radius), 60, 1);
+const ground = new Ground(50, 59.5 + pxTOvh(ferrisWheel.radius), 60, 1);
 const support = new Support(ferrisWheel, ground);
 
 // display them
@@ -314,28 +314,9 @@ ferrisWheel.show();
 ground.show();
 support.show();
 
-let mouseInUse = false;
-
-Events.on(engine, 'beforeUpdate', function (e) {
-  if (!mouseInUse) {
-    Body.setAngularVelocity(ferrisWheel.frame, 0.002);
-  }
-});
-
-Events.on(mouseConstraint, "mousedown", function (e) {
-  mouseInUse = true;
-});
-
-Events.on(mouseConstraint, "mouseup", function (e) {
-  setTimeout(() => { mouseInUse = false; }, 5000);
-});
 
 // run the engine
 Engine.run(engine);
 
 // run the renderer
 Render.run(render);
-
-
-// reload on resize
-window.onresize = () => document.location.reload();
