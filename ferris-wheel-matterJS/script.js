@@ -1,5 +1,5 @@
 const html = document.querySelector('html');
-window.onresize = () => document.location.reload(true);
+window.onresize = () => document.location.reload();
 
 
 // utility
