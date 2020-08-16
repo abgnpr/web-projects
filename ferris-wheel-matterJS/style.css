@@ -5,7 +5,7 @@ body {
 body {
   height: 100%;
   background: linear-gradient(#87ceeb 70%, white 80%);
-  background-image: url("./images/bg1.jpg");
+  background-image: url("/images/bg1.jpg");
   background-repeat: no-repeat;
   background-size: auto;
   -webkit-background-size: cover;
@@ -17,19 +17,41 @@ body {
   overflow: hidden;
 }
 
-.bush {
+.stop {
+  max-width: 5vmax;
   position: absolute;
-  zoom: 150%;
-  bottom: -0.1vh;
+  right: 1.5vw;
+  bottom: 1.4vw;
+  zoom: 0.8;
+  animation: spin 5s linear 0s infinite;
 }
 
-.engine {
+.start {
+  max-width: 5vmax;
   position: absolute;
-  right: 1vw;
-  bottom: 0vw;
+  right: 1.5vw;
+  bottom: 1.4vw;
   zoom: 0.8;
+}
+
+.lock {
+  position: absolute;
+  left: 1vw;
+  bottom: 1vw;
+  max-width: 5vmax;
+  max-height: 6vmax;
+  zoom: 0.9;
 }
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
 }
