@@ -37,7 +37,7 @@ body {
   max-height: 6vmax;
 }
 
-.speed-slider {
+.slider {
   position: absolute;
   writing-mode: bt-lr; /* IE */
   -webkit-appearance: slider-vertical; /* WebKit */
