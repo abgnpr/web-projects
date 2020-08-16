@@ -25,7 +25,8 @@ let Engine = Matter.Engine,
   Mouse = Matter.Mouse,
   MouseConstraint = Matter.MouseConstraint,
   Vector = Matter.Vector,
-  Vertices = Matter.Vertices;
+  Vertices = Matter.Vertices,
+  Events = Matter.Events;
 
 
 // create an engine
@@ -41,15 +42,16 @@ let render = Render.create({
     showConvexHulls: true,
     wireframes: false,
     background: '0',
-    pixelRatio: 'auto'
+    // pixelRatio: 'auto'
   }
 });
 
 // add mouse control
-World.add(engine.world, MouseConstraint.create(engine, {
+let mouseConstraint = MouseConstraint.create(engine, {
   mouse: Mouse.create(render.canvas),
   constraint: { stiffness: 0.2, render: { visible: false } }
-}));
+});
+World.add(engine.world, mouseConstraint);
 
 // __________________________________________________________________
 
@@ -303,8 +305,8 @@ function Support(body, base) {
 
 
 // create object instances
-const ferrisWheel = new FerrisWheel(50, 45);
-const ground = new Ground(50, 53 + pxTOvh(ferrisWheel.radius), 60, 1);
+const ferrisWheel = new FerrisWheel(50, 50);
+const ground = new Ground(50, 60 + pxTOvh(ferrisWheel.radius), 60, 1);
 const support = new Support(ferrisWheel, ground);
 
 // display them
@@ -312,9 +314,21 @@ ferrisWheel.show();
 ground.show();
 support.show();
 
-// rotate the ferris wheel by applying torque
-setInterval(() => { ferrisWheel.frame.torque = 50; }, 100);
+let mouseInUse = false;
 
+Events.on(engine, 'beforeUpdate', function (e) {
+  if (!mouseInUse) {
+    Body.setAngularVelocity(ferrisWheel.frame, 0.002);
+  }
+});
+
+Events.on(mouseConstraint, "mousedown", function (e) {
+  mouseInUse = true;
+});
+
+Events.on(mouseConstraint, "mouseup", function (e) {
+  setTimeout(() => { mouseInUse = false; }, 5000);
+});
 
 // run the engine
 Engine.run(engine);
