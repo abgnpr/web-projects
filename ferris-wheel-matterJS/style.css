@@ -18,11 +18,11 @@ body {
 }
 
 .spin-toggle {
-  max-width: 5vmax;
+  width: 40px;
+  max-width: 10vw;
   position: absolute;
-  right: 1.5vw;
-  bottom: 1.4vw;
-  zoom: 0.8;
+  left: 14px;
+  bottom: 15px;
 }
 
 .spinning {
@@ -31,15 +31,22 @@ body {
 
 .lock {
   position: absolute;
-  left: 1vw;
-  bottom: 1vw;
+  right: 14px;
+  bottom: 15px;
   max-width: 5vmax;
   max-height: 6vmax;
-  zoom: 0.9;
 }
 
-.slider {
+.speed-slider {
   position: absolute;
+  writing-mode: bt-lr; /* IE */
+  -webkit-appearance: slider-vertical; /* WebKit */
+  width: 15px;
+  max-width: 4vw;
+  max-height: 15vh;
+  padding: 0;
+  bottom: 53px;
+  left: 25px;
 }
 
 ::-webkit-scrollbar {

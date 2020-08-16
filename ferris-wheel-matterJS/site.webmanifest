@@ -1,0 +1,14 @@
+{
+  "name": "Ferris Wheel",
+  "short_name": "Ferris Wheel",
+  "description": "An interactive ferris wheel.",
+  "icons": [
+    {
+      "src": "/images/ferrisWheel.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "display": "standalone"
+}

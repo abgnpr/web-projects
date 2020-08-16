@@ -1,5 +1,5 @@
 const html = document.querySelector('html');
-window.onresize = () => document.location.reload();
+window.onresize = () => document.location.reload(true);
 
 
 // utility
@@ -244,7 +244,8 @@ function FerrisWheel(x_vw, y_vh) {
   this.axis = Constraint.create({
     bodyA: this.frame,
     bodyB: this.axle,
-    length: 0
+    length: 0,
+    stiffness: 1
   })
 
   // spokes from center to polgon vertices

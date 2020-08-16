@@ -3,8 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Ferris Wheel</title>
+    <meta name="author" content="Abhigyan Prakash" />
+    <meta name="description" content="Ferris Wheel" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="/images/ferrisWheel.png"
+    />
+
     <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <script defer src="/lib/decomp.js"></script>
     <script defer src="/lib/matter.js"></script>
     <script defer src="/script.js"></script>
@@ -12,10 +24,15 @@
   </head>
   <body>
     <img class="spin-toggle spinning" src="/images/start-stop.svg" />
-    <img class="lock"></img>
-    <input type="range" name="speed" id="" class="slider"
-      min='0' max='100' value='2'
-    >
+    <img class="lock" />
+    <input
+      type="range"
+      class="speed-slider"
+      min="0"
+      max="100"
+      value="2"
+      orient="vertical"
+    />
     <div class="matter-world"></div>
   </body>
 </html>
