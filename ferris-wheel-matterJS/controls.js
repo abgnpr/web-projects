@@ -2,7 +2,7 @@ const lock = document.querySelector('.lock');
 const lockedIcon = '/images/locked.png';
 const unockedIcon = '/images/unlocked.png';
 const spinToggle = document.querySelector('.spin-toggle');
-
+const speedControl = document.querySelector('.slider');
 
 // axle lock (default: locked)
 let axleLocked = ferrisWheel.axle.isStatic;
@@ -47,21 +47,20 @@ spinToggle.addEventListener('click', function (e) {
 });
 
 
-// true when mouse events are active
-let mouseInUse = false;
+let mouseInUse = false; // true when mouse events are active
+Events.on(mouseConstraint, "mousedown", () => { mouseInUse = true; });
+Events.on(mouseConstraint, "mouseup", () => { mouseInUse = false });
 
-Events.on(mouseConstraint, "mousedown", function (e) {
-  mouseInUse = true;
+// range (0.000 - 0.100)
+let angularVelocity = speedControl.value / 1000;
+
+speedControl.addEventListener('input', function (e) {
+  angularVelocity = speedControl.value / 1000;
 });
-
-Events.on(mouseConstraint, "mouseup", function (e) {
-  mouseInUse = false;
-});
-
 
 // Angular Velocity settings
 Events.on(engine, 'beforeUpdate', function (e) {
-  if (!mouseInUse && spin.on && ferrisWheel.frame.angularVelocity <= 0.002) {
-    Body.setAngularVelocity(ferrisWheel.frame, 0.002);
+  if (!mouseInUse && spin.on && ferrisWheel.frame.angularVelocity <= angularVelocity) {
+    Body.setAngularVelocity(ferrisWheel.frame, angularVelocity);
   }
 });

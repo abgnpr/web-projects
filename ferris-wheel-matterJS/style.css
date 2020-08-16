@@ -38,6 +38,10 @@ body {
   zoom: 0.9;
 }
 
+.slider {
+  position: absolute;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

@@ -90,7 +90,7 @@ const CustomBodies = {
           render: { fillStyle: '0', strokeStyle: '#2475B0', lineWidth: vminTOpx(5) },
         })
       ],
-      airFriction: 0,
+      airFriction: 0, restitution: 1, density: 1,
       collisionFilter: { group: Groups.nonColliding }
     });
   },
