@@ -1,18 +1,20 @@
 const lock = document.querySelector('.lock');
 const lockedIcon = './images/locked.png';
-const unockedIcon = './images/unlocked.png';
+const unlockedIcon = './images/unlocked.png';
+new Image().src = lockedIcon;
+new Image().src = unlockedIcon;
 const spinToggle = document.querySelector('.spin-toggle');
 const slider = document.querySelector('.slider');
 
 // axle lock (default: locked)
 let axleLocked = ferrisWheel.axle.isStatic;
-lock.setAttribute('src', axleLocked ? lockedIcon : unockedIcon);
+lock.setAttribute('src', axleLocked ? lockedIcon : unlockedIcon);
 
 lock.addEventListener('click', function (e) {
   if (axleLocked) {
     // ferrisWheel.axle.isStatic = false;
     Body.setStatic(ferrisWheel.axle, false);
-    lock.setAttribute('src', unockedIcon);
+    lock.setAttribute('src', unlockedIcon);
     axleLocked = false;
 
   } else {
