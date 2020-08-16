@@ -1,6 +1,6 @@
 const lock = document.querySelector('.lock');
-const lockedIcon = '/images/locked.png';
-const unockedIcon = '/images/unlocked.png';
+const lockedIcon = './images/locked.png';
+const unockedIcon = './images/unlocked.png';
 const spinToggle = document.querySelector('.spin-toggle');
 const speedControl = document.querySelector('.speed-slider');
 
