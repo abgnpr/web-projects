@@ -149,7 +149,7 @@ const CustomBodies = {
       collisionFilter: { category: Categories.axle, mask: Categories.support },
       friction: 0, density: 5, restitution: 0,
       render: { fillStyle: '#7E212C' },
-      // isStatic: true
+      isStatic: true
     });
   },
 
