@@ -1,6 +1,7 @@
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 @import 'https://fonts.googleapis.com/css2?family=Ubuntu&display=swap';
-* {
+html {
+  height: 100%;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -10,27 +11,21 @@
 }
 
 body {
-  height: 100vh;
   box-sizing: border-box;
+  height: 100%;
   margin: 0;
   font-family: "Ubuntu", sans-serif;
-  background-image: url("../images/bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background-color: #F9AA33;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
 .container {
+  box-sizing: border-box;
   height: 85%;
   width: 85%;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,16 +42,17 @@ body {
 }
 
 .digital-display {
+  box-sizing: border-box;
   width: 100%;
-  padding: 10vh 0;
-  text-shadow: 0px 0px 50px black;
   font-size: 12vw;
   text-align: center;
-  box-sizing: border-box;
+  text-shadow: 0px 0px 5px white;
+  padding: 10vh 0;
+  background-color: #232F34;
   border-radius: 1vmax;
-  background-color: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  -moz-box-shadow: inset 0 0 20px #000000;
+  -webkit-box-shadow: inset 0 0 20px #000000;
+  box-shadow: inset 0 0 20px #000000;
   color: white;
 }
 @media (orientation: landscape) {
@@ -68,63 +64,67 @@ body {
 }
 
 .buttons {
-  margin: 5vh 0;
-  background-color: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  border-radius: 1vmax;
-  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
   box-sizing: border-box;
+  margin: 5vh 0;
+  border-radius: 1vmax;
+  box-shadow: 0 28px 10px -23px rgba(32, 33, 36, 0.5);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 .buttons button {
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   height: 8vmax;
   width: 12vmax;
-  font-size: 6vmin;
+  font-size: 7vmin;
   color: white;
   padding: 4vmax;
   border: none;
-  box-sizing: border-box;
-  background: none;
+  background-color: #232F34;
   transition: 0.5s;
 }
 .buttons button:focus {
   outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .buttons button:hover {
   cursor: pointer;
-  color: black;
-  background: rgba(255, 255, 255, 0.5);
 }
 .buttons button:active {
-  color: black;
   transition: 0.1s;
-  background: white;
 }
 .buttons #left {
   border-radius: 1vmax 0 0 1vmax;
+  box-shadow: -1vmax 5px 15px 2px rgba(32, 33, 36, 0.5);
+}
+.buttons #left:active {
+  box-shadow: 0 0 5px 0 rgba(32, 33, 36, 0.5);
 }
 .buttons #right {
   border-radius: 0 1vmax 1vmax 0;
+  box-shadow: 1vmax 5px 15px 2px rgba(32, 33, 36, 0.5);
+}
+.buttons #right:active {
+  box-shadow: 0 0 5px 0 rgba(32, 33, 36, 0.5);
 }
 
 .laps {
   height: 20vw;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
+  background-color: #232F34;
+  -moz-box-shadow: inset 0 0 20px #000000;
+  -webkit-box-shadow: inset 0 0 20px #000000;
+  box-shadow: inset 0 0 20px #000000;
   border-radius: 1vmax;
-  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
   box-sizing: border-box;
   padding: 3vh 2vw;
   flex-grow: 2;
-  transition: 0.5s;
+  transition: 0.6s;
 }
 @media (orientation: landscape) {
   .laps {
@@ -145,7 +145,6 @@ body {
   color: white;
   font-size: 7vw;
   text-align: center;
-  text-shadow: 0px 0px 50px black;
   padding-bottom: 2vmin;
   margin-top: 2vmin;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -153,7 +152,7 @@ body {
 @media (orientation: landscape) {
   .laps .list .lap {
     width: 88%;
-    font-size: 3.4vw;
+    font-size: 3vw;
   }
 }
 .laps .list .lap span {
@@ -168,6 +167,7 @@ body {
 
 .hidden {
   height: 0;
+  width: 0;
   padding: 0;
   flex-grow: 0;
 }
