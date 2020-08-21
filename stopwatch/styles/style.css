@@ -1,0 +1,177 @@
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import 'https://fonts.googleapis.com/css2?family=Ubuntu&display=swap';
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+  background-image: url("../images/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: 85%;
+  width: 85%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (orientation: landscape) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+}
+
+.digital-display {
+  width: 100%;
+  padding: 10vh 0;
+  text-shadow: 0px 0px 50px black;
+  font-size: 12vw;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 1vmax;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  color: white;
+}
+@media (orientation: landscape) {
+  .digital-display {
+    width: 45%;
+    font-size: 5vw;
+    margin-top: 10%;
+  }
+}
+
+.buttons {
+  margin: 5vh 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 1vmax;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.buttons button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 8vmax;
+  width: 12vmax;
+  font-size: 6vmin;
+  color: white;
+  padding: 4vmax;
+  border: none;
+  box-sizing: border-box;
+  background: none;
+  transition: 0.5s;
+}
+.buttons button:focus {
+  outline: none;
+}
+.buttons button:hover {
+  cursor: pointer;
+  color: black;
+  background: rgba(255, 255, 255, 0.5);
+}
+.buttons button:active {
+  color: black;
+  transition: 0.1s;
+  background: white;
+}
+.buttons #left {
+  border-radius: 1vmax 0 0 1vmax;
+}
+.buttons #right {
+  border-radius: 0 1vmax 1vmax 0;
+}
+
+.laps {
+  height: 20vw;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 1vmax;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  box-sizing: border-box;
+  padding: 3vh 2vw;
+  flex-grow: 2;
+  transition: 0.5s;
+}
+@media (orientation: landscape) {
+  .laps {
+    width: 40%;
+  }
+}
+.laps .list {
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+.laps .list .lap {
+  width: 70%;
+  color: white;
+  font-size: 7vw;
+  text-align: center;
+  text-shadow: 0px 0px 50px black;
+  padding-bottom: 2vmin;
+  margin-top: 2vmin;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+@media (orientation: landscape) {
+  .laps .list .lap {
+    width: 88%;
+    font-size: 3.4vw;
+  }
+}
+.laps .list .lap span {
+  font-size: 3vw;
+  font-family: "Ubuntu", sans-serif;
+}
+@media (orientation: portrait) {
+  .laps .list .lap span {
+    font-size: 6vw;
+  }
+}
+
+.hidden {
+  height: 0;
+  padding: 0;
+  flex-grow: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

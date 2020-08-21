@@ -1,0 +1,21 @@
+$breakpoints: ('small': 767px, 'medium': 992px, 'large': 1200px) !default
+/// Mixin to manage responsive breakpoints
+/// @author Hugo Giraudel
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin respond-to-size($breakpoint)
+  @if map-has-key($breakpoints, $breakpoint)
+    @media (min-width: map-get($breakpoints, $breakpoint))
+      @content
+  @else
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}."
+
+@mixin respond-to-orientation($orientation)
+  @if $orientation == landscape
+    @media (orientation: landscape)
+      @content
+  @else if $orientation == portrait
+    @media (orientation: portrait)
+      @content
+  @else
+    @warn "Invalid orientation available orientations are landscape, portrait"
