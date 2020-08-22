@@ -72,6 +72,7 @@ body {
 @media (orientation: landscape) {
   .digital-display {
     font-size: 5vw;
+    height: 60%;
   }
 }
 
