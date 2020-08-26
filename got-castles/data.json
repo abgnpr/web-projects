@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Castle Black",
+    "imgSrc": "images/Castle_Black.jpg",
+    "desc": "Castle Black is the primary headquarters and redoubt of the Night's Watch. It is located roughly halfway along the length of the Wall on its southern side, at the northern end of the Kingsroad. It is a dark and chilling home to its garrison."
+  },
+  {
+    "name": "Winterfell",
+    "imgSrc": "images/Winterfell.jpg",
+    "desc": "Winterfell is the capital of the Kingdom of the North and the seat and the ancestral home of the royal House Stark. It is a very large castle located at the center of the North, from where the head of House Stark rules over his or her people."
+  },
+  {
+    "name": "Pyke",
+    "imgSrc": "images/Pyke.jpg",
+    "desc": "Pyke is the stronghold and seat of House Greyjoy, located on the island of the same name, which is one of the seven major Iron Islands. The castle is the regional capital of the Iron Islands as a whole. Pyke is an ancient stronghold and the cliff it was built on has been eroded by the sea leaving the towers standing on stone stacks."
+  },
+  {
+    "name": "Harrenhal",
+    "imgSrc": "images/Harrenhal.jpg",
+    "desc": "Harrenhal is a huge castle, the largest one in all of Westeros, though it is also the most ill-omened. It is located on the northern shore of the Gods Eye lake at the heart of the Riverlands. In the Burning of Harrenhal, Aegon used his dragon Balerion to roast King Harren and all of his sons alive within their own tower. Harrenhal was blasted with dragonfire and left half-ruined."
+  },
+  {
+    "name": "Eyrie",
+    "imgSrc": "images/The_Eyrie.jpg",
+    "desc": "The Eyrie is the principal stronghold of House Arryn. It is located in the Vale of Arryn near the east coast of Westeros. The Eyrie straddles the top of a peak in the Mountains of the Moon several thousand feet above the valley floor below. It is approached by a narrow causeway and road. Those who would approach the Eyrie must pass through three way-castles guarding the ascent - and then, must proceed in single file, making them very vulnerable to archers. For these reasons, the Eyrie is considered impregnable to any attack that does not involve dragons, and its defenses have never been overcome."
+  },
+  {
+    "name": "Riverrun",
+    "imgSrc": "images/Riverrun.jpg",
+    "desc": "Riverrun is the seat of House Tully, which was once occupied by House Frey. It is a large castle located in the central-western part of the Riverlands. It sits at the point where the Red Fork of the Trident River is joined by its major tributary, the Tumblestone River flowing out of the west."
+  },
+  {
+    "name": "Casterly Rock",
+    "imgSrc": "images/Casterly_Rock.jpg",
+    "desc": "Casterly Rock is the ancestral stronghold of House Lannister. It is located on the Western coast of Westeros on a rocky promontory overlooking the Sunset Sea. It overlooks the major city of Lannisport. A major goldmine is located under Casterly Rock. It is one of the most productive in the realm and provides House Lannister with their wealth."
+  },
+  {
+    "name": "Red Keep",
+    "imgSrc": "images/Red_Keep.jpg",
+    "desc": "The Red Keep, a castle succeeding the Aegonfort, is the residence of the King of the Andals and the First Men, his family and his court, located within King's Landing, the capital of the Seven Kingdoms. It dominates the skyline of the city and serves as the city's primary fortress and redoubt. It also houses the government of the Seven Kingdoms."
+  },
+  {
+    "name": "Dragonstone",
+    "imgSrc": "images/Dragonstone.jpg",
+    "desc": "Dragonstone is the castle that stands upon the eponymous island located in Blackwater Bay. It is the ancestral seat of House Targaryen and the former stronghold of House Baratheon of Dragonstone. It is within the Crownlands, the capital region of the Seven Kingdoms."
+  },
+  {
+    "name": "Storms End",
+    "imgSrc": "images/Storms_End.jpg",
+    "desc": "Storm's End is the ancestral seat of House Baratheon. Lord Gendry Baratheon is the Lord of Storm's End. Storm's End is a formidable fortress, located on the southeastern coast of Westeros overlooking Shipbreaker Bay."
+  },
+  {
+    "name": "Highgarden",
+    "imgSrc": "images/Highgarden.jpg",
+    "desc": "Highgarden was the seat of House Tyrell and is the regional capital of the Reach. Located on the banks of the river Mander, Highgarden sits astride the Roseroad, a major thoroughfare linking Oldtown and King's Landing."
+  },
+  {
+    "name": "Sunspear",
+    "imgSrc": "images/Sunspear.jpg",
+    "desc": "Sunspear, also known as the Old Palace, is the seat of House Nymeros Martell and the capital of Dorne. The castle is located on the Broken Arm, north of the Greenblood on the far southeastern coast of Westeros and is surrounded on three sides by the sea, and by the shadow city on the fourth side."
+  }
+]
