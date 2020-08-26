@@ -39,6 +39,12 @@ function fetchAndSetImg(url, imgElement) {
     .catch(e => console.log(e.message));
 }
 
-document.getElementById('scroll-down').addEventListener('click', function() {
-  castlesContiner.scrollIntoView({behavior: 'smooth'})
+document.getElementById("scroll-down").addEventListener("click", function () {
+  castlesContiner.scrollIntoView({ behavior: "smooth" });
+});
+
+window.addEventListener("load", function () {
+  setTimeout(() => {
+    document.querySelector("cover").scrollTo(0, 1);
+  }, 0);
 });
