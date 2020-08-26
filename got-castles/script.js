@@ -1,3 +1,5 @@
+const castlesContiner = document.querySelector(".castles-container");
+
 fetch("data.json")
   .then(res => {
     if (res.ok) return res.json();
@@ -7,13 +9,12 @@ fetch("data.json")
   .catch(e => console.log(e.message));
 
 function displayCastles(castles) {
-  const castlesContiner = document.querySelector(".castles-container");
   castles.forEach(castle => {
     let name = document.createElement("h2");
     name.textContent = castle.name;
 
     let img = document.createElement("img");
-    fetch_nd_set_img(castle.imgSrc, img);
+    fetchAndSetImg(castle.imgSrc, img);
 
     let desc = document.createElement("p");
     desc.textContent = castle.desc;
@@ -26,7 +27,7 @@ function displayCastles(castles) {
   });
 }
 
-function fetch_nd_set_img(url, imgElement) {
+function fetchAndSetImg(url, imgElement) {
   return fetch(url)
     .then(res => {
       if (res.ok) return res.blob();
@@ -37,3 +38,7 @@ function fetch_nd_set_img(url, imgElement) {
     })
     .catch(e => console.log(e.message));
 }
+
+document.getElementById('scroll-down').addEventListener('click', function() {
+  castlesContiner.scrollIntoView({behavior: 'smooth'})
+});

@@ -1,3 +1,4 @@
+@import 'https://fonts.googleapis.com/css2?family=Ubuntu&display=swap';
 @font-face {
   font-family: Trajan Pro;
   src: url("fonts/Trajan Pro.ttf") format("truetype");
@@ -17,21 +18,47 @@ body {
   padding: 0 10px;
 }
 
-.castles-container {
-  margin-top: 40px;
+.cover {
+  position: relative;
+  height: calc(100vh - 80px);
 }
-
-.head h4 {
+.cover h3 {
   font-family: "Game of Thrones";
   text-align: center;
+  width: 100%;
 }
-.head h1 {
-  line-height: 1.2;
-  font-family: "Trajan Pro";
+.cover .title {
+  position: absolute;
+  width: 100%;
+  top: 30%;
+}
+.cover .title h1 {
+  text-align: center;
+  line-height: 2;
+  font-family: "Game of Thrones";
+}
+.cover .title p {
   text-align: center;
 }
-.head p {
-  text-align: center;
+.cover img {
+  position: absolute;
+  width: 5vmax;
+  height: 5vmax;
+  left: calc( 50% - 2.5vmax );
+  bottom: 2%;
+}
+.cover img:focus {
+  cursor: pointer;
+}
+@media (min-aspect-ratio: 11/8) {
+  .cover img {
+    left: 90%;
+  }
+}
+
+.castles-container {
+  margin-top: 40px;
+  border-top: 1px solid #eeeeee;
 }
 
 .castle h2 {

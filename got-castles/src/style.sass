@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css2?family=Ubuntu&display=swap'
+
 @font-face
   font-family: Trajan Pro
   src: url('fonts/Trajan Pro.ttf') format('truetype')
@@ -5,9 +7,6 @@
 @font-face
   font-family: Game of Thrones
   src: url('fonts/Game of Thrones.ttf') format('truetype')
-
-=b()
-  border: 1px solid black
 
 body
   margin: 40px auto
@@ -19,19 +18,41 @@ body
   background-color: #eeeeee
   padding: 0 10px
 
-.castles-container
-  margin-top: 40px
+=b()
+  box-sizing: border-box
+  border: 1px solid
 
-.head
-  h4
+.cover
+  position: relative
+  height: calc(100vh -  80px)
+  h3
     font-family: 'Game of Thrones'
     text-align: center
-  h1
-    line-height: 1.2
-    font-family: 'Trajan Pro'
-    text-align: center
-  p
-    text-align: center
+    width: 100%
+  .title
+    position: absolute
+    width: 100%
+    top: 30%
+    h1
+      text-align: center
+      line-height: 2
+      font-family: 'Game of Thrones'
+    p
+      text-align: center
+  img
+    position: absolute
+    width: 5vmax
+    height: 5vmax
+    left: calc( 50% - 2.5vmax )
+    bottom: 2%
+    &:focus
+      cursor: pointer
+    @media (min-aspect-ratio: 11/8)
+      left: 90%    
+
+.castles-container
+  margin-top: 40px
+  border-top: 1px solid #eeeeee
 
 .castle
   h2
