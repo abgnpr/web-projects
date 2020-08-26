@@ -46,6 +46,6 @@ document.getElementById("scroll-down").addEventListener("click", function () {
 window.addEventListener("load", function () {
   setTimeout(() => {
     // document.querySelector(".cover").scrollIntoView({block: "center"});
-    window.scrollTo(0, 1);
+    window.scrollTo(0, 50);
   }, 0);
 });
