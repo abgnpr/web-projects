@@ -2,11 +2,11 @@
 
 A minimal, elegant & easy-to-read page.
 
-[See it live](https://mountap.github.io/web-projects/stopwatch/)
+[See it live](https://mountap.github.io/web-projects/got-castles/)
 
 ## Things learned
 
-- working with promises and async code
+- working with promises and async code (beginner)
 
 - enhancing clarity and readability
 
