@@ -55,7 +55,7 @@ body {
 .cover img:hover {
   cursor: pointer;
 }
-@media (min-aspect-ratio: 11/8) {
+@media (min-aspect-ratio: 11/8) and (max-height: 500px) {
   .cover img {
     left: 90%;
   }
