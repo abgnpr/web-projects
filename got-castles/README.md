@@ -12,6 +12,8 @@ A minimal, elegant & easy-to-read page.
 
 - making a page cover
 
+- positioning elements according to aspect ratio
+
 ## Credit
 
 Thanx to the creator of [bettermotherfuckingwebsite.com](http://bettermotherfuckingwebsite.com/) for clarity enhancement tips.
