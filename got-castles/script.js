@@ -42,9 +42,3 @@ function fetchAndSetImg(url, imgElement) {
 document.getElementById("scroll-down").addEventListener("click", function () {
   castlesContiner.scrollIntoView({ behavior: "smooth" });
 });
-
-window.addEventListener("load", function () {
-  setTimeout(() => {
-    document.querySelector(".cover").scrollIntoView({block: "end"});
-  }, 0);
-});
