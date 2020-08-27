@@ -1,9 +1,15 @@
 # Stopwatch
 
-A responsive stopwatch made using flexbox. [See it live](https://mountap.github.io/web-projects/stopwatch/)
+A responsive stopwatch made using flexbox. 
 
-#### Things learner: 
-- Cooperative asynchronous programming - `setInterval()`
+[See it live](https://mountap.github.io/web-projects/stopwatch/)
+
+## Things learned
+
+- cooperative asynchronous programming - `setInterval()`
+
 - `Date` object and related functions
-- javascript `class`
-- SASS
+
+- javascript classes
+
+- getting started with SASS
