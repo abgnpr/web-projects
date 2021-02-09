@@ -1,6 +1,3 @@
-// let vwInPx = width => (width * window.innerWidth) / 100;
-let vhInPx = height => (height * window.innerHeight) / 100;
-
 const container = document.querySelector(".container");
 const navbar = document.querySelector(".navbar");
 const small_logo = document.querySelector(".small-logo");

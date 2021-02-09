@@ -1,10 +1,5 @@
 "use strict";
 
-// let vwInPx = width => (width * window.innerWidth) / 100;
-var vhInPx = function vhInPx(height) {
-  return height * window.innerHeight / 100;
-};
-
 var container = document.querySelector(".container");
 var navbar = document.querySelector(".navbar");
 var small_logo = document.querySelector(".small-logo");
