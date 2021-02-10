@@ -2,8 +2,8 @@
 let vhInPx = height => (height * window.innerHeight) / 100;
 
 const container = document.querySelector(".container");
-const anchor = document.querySelector(".anchor");
 const navbar = document.querySelector(".navbar");
+const small_logo = document.querySelector(".small-logo");
 const logo = document.querySelector(".logo");
 const logo_container = document.querySelector(".logo-container");
 
@@ -21,10 +21,12 @@ container.addEventListener("scroll", () => {
   if (current_pos < checkpoint) {
     navbar.style.top = `${(1 - ratio) * -navbar_orig_height}px`;
     logo.style.opacity = Math.pow(1 - ratio, 4);
+    small_logo.style.opacity = ratio;
     navbar.classList.remove('shadow')
   } else {
     navbar.style.top = 0;
     navbar.classList.add('shadow')
+    small_logo.style.opacity = 1;
     logo.style.opacity = 0;
   }
 });

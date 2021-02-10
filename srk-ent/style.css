@@ -8,7 +8,6 @@
 
 html {
   font-size: 18px;
-  font-family: "Ubuntu";
   font-family: "Vesper Libre";
 }
 
@@ -28,6 +27,13 @@ body {
   height: 8vh;
   transition: 0.3s;
   background-color: #1a1c64;
+  display: flex;
+  justify-content: center;
+}
+.navbar .small-logo {
+  height: 10vh;
+  opacity: 0;
+  transition: 0.3s;
 }
 
 .shadow {
@@ -39,7 +45,7 @@ body {
 }
 
 .container {
-  background-color: #f7f1e3;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,7 +63,8 @@ body {
   align-items: center;
   align-content: center;
   width: 100%;
-  height: 35vh;
+  height: 30vh;
+  margin-top: 10vh;
 }
 .container .logo-container .logo {
   display: block;
@@ -70,7 +77,7 @@ body {
   flex-shrink: 0;
   max-width: 650px;
   width: 90vw;
-  margin-top: 5vh;
+  margin-top: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,7 +86,7 @@ body {
   width: 100%;
   margin-bottom: 10vmin;
   display: grid;
-  grid-template-columns: 56% 44%;
+  grid-template-columns: 54% 46%;
   grid-template-rows: 100%;
 }
 .container .items .item #img1, .container .items .item #img2, .container .items .item #img3, .container .items .item #txt1, .container .items .item #txt2, .container .items .item #txt3 {
@@ -104,6 +111,9 @@ body {
   max-width: 250px;
   font-size: 18px;
   padding: 10px;
+}
+.container .items .item #img1 {
+  max-height: 300px;
 }
 .container .items .item #txt1 {
   align-self: start;
