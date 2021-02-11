@@ -21,6 +21,7 @@ body {
 }
 
 .navbar {
+  z-index: 1;
   position: fixed;
   top: -8vh;
   width: 100%;
@@ -45,7 +46,14 @@ body {
 }
 
 .container {
-  background-color: #ffffff;
+  background-color: #f7f1e3;
+  background-image: url("images/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,15 +84,14 @@ body {
 .container .items {
   flex-shrink: 0;
   max-width: 650px;
-  width: 90vw;
-  margin-top: 3vh;
+  width: 95vw;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .container .items .item {
   width: 100%;
-  margin-bottom: 10vmin;
+  margin-bottom: 4vmin;
   display: grid;
   grid-template-columns: 56% 44%;
   grid-template-rows: 100%;
@@ -129,7 +136,7 @@ body {
   color: red;
 }
 .container .items .item #img2 {
-  border-radius: 50% 40% 40% 10%;
+  border-radius: 10px;
   grid-column: 1/span 1;
   grid-row: 1/span 1;
 }
@@ -138,7 +145,7 @@ body {
   grid-row: 1/span 1;
 }
 .container .items .item #img3 {
-  border-radius: 50% 40% 10% 50%;
+  border-radius: 10px;
 }
 .container hr {
   margin-top: 5vh;
@@ -155,4 +162,10 @@ body {
 }
 .container #info p strong {
   font-size: 20px;
+}
+.container .item, .container #info {
+  padding: 3vh 3vw;
+  background-color: #ffffff8f;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
 }
