@@ -21,7 +21,7 @@ body {
 }
 
 .navbar {
-  z-index: 1;
+  z-index: 10;
   position: fixed;
   top: -8vh;
   width: 100%;
@@ -47,7 +47,7 @@ body {
 
 .container {
   background-color: #f7f1e3;
-  background-image: url("images/bg.jpg");
+  background-image: url("images/bg_opt.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto;
@@ -164,8 +164,9 @@ body {
   font-size: 20px;
 }
 .container .item, .container #info {
-  padding: 3vh 3vw;
-  background-color: #ffffff8f;
-  backdrop-filter: blur(10px);
+  padding: 3vh 2vw;
+  background-color: #ffffff88;
   border-radius: 10px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
 }
