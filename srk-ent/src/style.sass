@@ -44,8 +44,7 @@ body
     background-color: #f7f1e3
     background-image: url("images/bg_opt.jpg")
     background-repeat: no-repeat
-    background-position: center
-    background-size: auto
+    background-position: cover
     -webkit-background-size: cover
     -moz-background-size: cover
     -o-background-size: cover
@@ -73,23 +72,23 @@ body
         .logo
             display: block
             max-width: 350px
-            // max-height: 27vh
             height: 22vh
-            // width: 80vw
             margin: 2vh 0
             font-size: 13vh
 
     .items
         flex-shrink: 0
         max-width: 650px
-        width: 95vw
+        width: 90vw
         display: flex
         flex-direction: column
         align-items: center
+        margin-top: 2vh
 
         .item
             width: 100%
-            margin-bottom: 4vmin
+            margin-bottom: 3vh
+            padding: 2vh 2vw
             display: grid
             grid-template-columns: 56% 44%
             grid-template-rows: 100%
@@ -128,33 +127,44 @@ body
                     span
                         color: red
             #img2
-                border-radius: 10px
-                // border-radius: 50% 40% 40% 10%
                 grid-column: 1 / span 1
                 grid-row: 1 / span 1
             #txt2
                 grid-column: 2 / span 1
                 grid-row: 1 / span 1
-            #img3
-                border-radius: 10px
-                // border-radius: 50% 40% 10% 50%
 
-    hr
-        margin-top: 5vh
-        width: 100%
+        hr
+            margin-top: 5vh
+            width: 100%
+            border-color: #ffffffe6
 
-    #info
-        margin: 10vh 10vw 55.5vh 10vw
-        h3
-            color: #1a1c64
-        p
-            margin-top: 2vh
-            strong
-                font-size: 20px
+        #info
+            padding: 5vh 8vw
+            margin: 10vh 0 5vh 0
+            h3
+                color: #1a1c64
+                font-size: 24px
+            p
+                margin-top: 2vh
+                strong
+                    font-size: 22px
 
-    .item, #info
-        padding: 3vh 2vw
-        background-color: #ffffff88
-        border-radius: 10px
-        backdrop-filter: blur(8px)
-        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2)
+        #connect-icons
+            padding: 0.5vh 2vw
+            display: flex
+            flex-direction: row
+            justify-content: center
+            align-items: center
+            margin-bottom: 30vh
+            .icon
+                max-width: 10vw
+                max-height: 10vh
+                margin: 2vh 2vw
+
+        // card effect
+        .item, #info, #connect-icons
+            // background-color: #ffffff9f
+            background-color: #ffffffe6
+            border-radius: 10px
+            backdrop-filter: blur(2px)
+            box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2)
